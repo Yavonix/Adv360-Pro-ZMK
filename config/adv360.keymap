@@ -75,6 +75,6 @@
         &kp LSHFT &kp Q     &kp X    &kp M    &kp W      &kp Z                            &kp HOME &kp PG_UP                           &kp K  &kp F  &kp SEMI &kp DOT  &kp FSLH &kp RSHFT
         &mo 2     &kp GRAVE &kp CAPS &kp LEFT &kp RIGHT                &kp BSPC &kp DEL   &kp END  &kp PG_DN &kp ENTER &kp SPACE              &kp UP &kp DOWN  &kp LBKT &kp RBKT &mo 2
       >;
-    }
+    };
   };
 };
