@@ -26,6 +26,87 @@
           flavor = "tap-preferred";
           bindings = <&kp>, <&kp>;
       };
+
+      // Base top row:  # ! + = $ % ^ & * ( ) -
+      // With Shift:   @ 1 2 3 4 5 6 7 8 9 0 _
+      // Mask either held Shift for the second binding so digits stay unshifted.
+      hash_at: hash_at {
+          compatible = "zmk,behavior-mod-morph";
+          label = "HASH_AT";
+          #binding-cells = <0>;
+          bindings = <&kp HASH>, <&kp AT>;
+          mods = <(MOD_LSFT | MOD_RSFT)>;
+      };
+      sym1: symbol_one {
+          compatible = "zmk,behavior-mod-morph";
+          label = "SYMBOL_ONE";
+          #binding-cells = <0>;
+          bindings = <&kp EXCL>, <&kp N1>;
+          mods = <(MOD_LSFT | MOD_RSFT)>;
+      };
+      sym2: symbol_two {
+          compatible = "zmk,behavior-mod-morph";
+          label = "SYMBOL_TWO";
+          #binding-cells = <0>;
+          bindings = <&kp PLUS>, <&kp N2>;
+          mods = <(MOD_LSFT | MOD_RSFT)>;
+      };
+      sym3: symbol_three {
+          compatible = "zmk,behavior-mod-morph";
+          label = "SYMBOL_THREE";
+          #binding-cells = <0>;
+          bindings = <&kp EQUAL>, <&kp N3>;
+          mods = <(MOD_LSFT | MOD_RSFT)>;
+      };
+      sym4: symbol_four {
+          compatible = "zmk,behavior-mod-morph";
+          label = "SYMBOL_FOUR";
+          #binding-cells = <0>;
+          bindings = <&kp DLLR>, <&kp N4>;
+          mods = <(MOD_LSFT | MOD_RSFT)>;
+      };
+      sym5: symbol_five {
+          compatible = "zmk,behavior-mod-morph";
+          label = "SYMBOL_FIVE";
+          #binding-cells = <0>;
+          bindings = <&kp PRCNT>, <&kp N5>;
+          mods = <(MOD_LSFT | MOD_RSFT)>;
+      };
+      sym6: symbol_six {
+          compatible = "zmk,behavior-mod-morph";
+          label = "SYMBOL_SIX";
+          #binding-cells = <0>;
+          bindings = <&kp CARET>, <&kp N6>;
+          mods = <(MOD_LSFT | MOD_RSFT)>;
+      };
+      sym7: symbol_seven {
+          compatible = "zmk,behavior-mod-morph";
+          label = "SYMBOL_SEVEN";
+          #binding-cells = <0>;
+          bindings = <&kp AMPS>, <&kp N7>;
+          mods = <(MOD_LSFT | MOD_RSFT)>;
+      };
+      sym8: symbol_eight {
+          compatible = "zmk,behavior-mod-morph";
+          label = "SYMBOL_EIGHT";
+          #binding-cells = <0>;
+          bindings = <&kp ASTRK>, <&kp N8>;
+          mods = <(MOD_LSFT | MOD_RSFT)>;
+      };
+      sym9: symbol_nine {
+          compatible = "zmk,behavior-mod-morph";
+          label = "SYMBOL_NINE";
+          #binding-cells = <0>;
+          bindings = <&kp LPAR>, <&kp N9>;
+          mods = <(MOD_LSFT | MOD_RSFT)>;
+      };
+      sym0: symbol_zero {
+          compatible = "zmk,behavior-mod-morph";
+          label = "SYMBOL_ZERO";
+          #binding-cells = <0>;
+          bindings = <&kp RPAR>, <&kp N0>;
+          mods = <(MOD_LSFT | MOD_RSFT)>;
+      };
     };
 
   keymap {
@@ -33,7 +114,7 @@
 
     default_layer {
       bindings = <
-        &kp EQUAL &kp N1    &kp N2   &kp N3   &kp N4     &kp N5 &tog 1                                                           &mo 3 &kp N6 &kp N7 &kp N8    &kp N9   &kp N0   &kp MINUS
+        &hash_at  &sym1     &sym2    &sym3    &sym4      &sym5  &tog 1                                                           &mo 3 &sym6  &sym7  &sym8     &sym9    &sym0    &kp MINUS
         &kp TAB   &kp B     &kp L    &kp D    &kp C      &kp V  &tog 4                                                            &none &kp J  &kp F  &kp O     &kp U    &kp COMMA    &kp BSLH
         &kp ESC   &kp N     &kp R    &kp T    &kp S      &kp G  &none           &kp LCTRL &kp LALT &kp LGUI  &kp RCTRL           &none &kp Y  &kp H  &kp A     &kp E    &kp I &kp SQT
         &kp LSHFT &kp Q     &kp X    &kp M    &kp W      &kp Z                            &kp HOME &kp PG_UP                           &kp K  &kp P  &kp SEMI &kp DOT  &kp FSLH &kp RSHFT
